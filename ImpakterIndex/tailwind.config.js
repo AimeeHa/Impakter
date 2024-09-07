@@ -7,7 +7,22 @@ export default {
     './src/**/*.{ts,tsx}',
   ],
   theme: {
-    extend: {},
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
+    extend: {
+      borderRadius: {
+        button: '0.3rem',
+      },
+      fontSize: {
+        banner: '56px',
+        h1: '42px',
+      },
+    },
   },
   plugins: [],
 };

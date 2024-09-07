@@ -1,3 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --nav-height: 4rem;
+    --ft-height: 70rem;
+    --main-height: calc(100vh - var(--nav-height));
+  }
+}
+
+@layer components {
+  nav {
+    @apply h-[var(--nav-height)];
+  }
+
+  main {
+    @apply min-h-[var(--main-height)] bg-gray-100;
+  }
+
+  .home-sections {
+    @apply p-[1rem_3rem] h-[var(--main-height)];
+  }
+
+  footer {
+    @apply h-[var(--ft-height)] p-[0_3rem] flex flex-col justify-center items-center;
+  }
+}
+
+@layer utilities {
+  .footerSNS {
+    @apply w-[36px] h-[36px] opacity-85;
+  }
+
+  .blue-button {
+    @apply w-[10rem] bg-blue-600 text-white rounded-button py-2 hover:bg-blue-800
+    transition duration-200 ease-in-out delay-75 cursor-pointer border-solid border-[1px]
+    border-blue-600 hover:border-blue-800;
+  }
+
+  .white-button {
+    @apply w-[10rem] bg-white text-blue-600 rounded-button py-2 hover:bg-gray-100
+      transition duration-200 ease-in-out delay-75 cursor-pointer border-solid border-[1px]
+      border-blue-600;
+  }
+}
