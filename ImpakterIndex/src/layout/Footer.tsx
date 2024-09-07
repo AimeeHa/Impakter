@@ -7,6 +7,8 @@ import {
   faSquareInstagram,
   faSquareXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
+import DemoButton from '../components/demoButton';
+import FreeScoreButton from '../components/freeScoreButton';
 
 export default function Footer() {
   return (
@@ -17,8 +19,8 @@ export default function Footer() {
           Looking for an ESG solution for your business?
         </h1>
         <div className="w-[75%] flex justify-between items-center">
-          <button className="white-button">Free ESG Rating</button>
-          <button className="blue-button">Book a Demo</button>
+          <FreeScoreButton className="white-button" />
+          <DemoButton />
         </div>
       </section>
 

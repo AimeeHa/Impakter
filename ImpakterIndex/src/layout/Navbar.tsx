@@ -1,5 +1,6 @@
 import navLinks from '../statics/links';
 import logo from '../assets/logo.png';
+import FreeScoreButton from '../components/freeScoreButton';
 
 export default function Navbar() {
   return (
@@ -11,7 +12,7 @@ export default function Navbar() {
             <a href={link.link}>{link.title}</a>
           </li>
         ))}
-        <button className="blue-button">Free ESG Score</button>
+        <FreeScoreButton className="blue-button" />
         {/* language button */}
         <div className="bg-blue-500 text-white rounded-[50%]">EN</div>
         {/*temp*/}
