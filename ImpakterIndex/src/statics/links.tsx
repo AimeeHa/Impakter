@@ -1,9 +1,5 @@
 const navLinks = [
   {
-    title: 'About Us',
-    link: '/about',
-  },
-  {
     title: 'Top Sustainable Companies',
     link: '/top-companies',
   },
@@ -14,6 +10,10 @@ const navLinks = [
   {
     title: 'Resources',
     link: '/resources',
+  },
+  {
+    title: 'About Us',
+    link: '/about',
   },
 ];
 

@@ -12,7 +12,7 @@
 
 @layer components {
   nav {
-    @apply h-[var(--nav-height)];
+    @apply h-[var(--nav-height)] flex justify-between items-center p-[0_2rem];
   }
 
   main {
