@@ -5,7 +5,9 @@ import FreeScoreButton from '../components/freeScoreButton';
 export default function Navbar() {
   return (
     <nav>
-      <img src={logo} alt="logo" />
+      <a href="/">
+        <img src={logo} alt="logo" />
+      </a>
       <ul className="flex gap-3 justify-center items-center">
         {navLinks.map((link, index) => (
           <li key={index}>

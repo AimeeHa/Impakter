@@ -16,7 +16,7 @@
   }
 
   main {
-    @apply min-h-[var(--main-height)] bg-gray-100;
+    @apply min-h-[var(--main-height)] bg-gray-100 p-[1rem_2rem];
   }
 
   .home-sections {
@@ -24,7 +24,7 @@
   }
 
   footer {
-    @apply h-[var(--ft-height)] p-[0_3rem] flex flex-col justify-center items-center;
+    @apply h-[var(--ft-height)] p-[0_2rem] flex flex-col justify-center items-center;
   }
 }
 

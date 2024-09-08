@@ -1,14 +1,19 @@
-import Footer from './layout/Footer';
-import Navbar from './layout/Navbar';
+import Faqs from './components/faqs';
+import LatestInESG from './components/latestInESG';
+import SearchBar from './components/searchBar';
 import './index.css';
+import Layout from './layout/Layout';
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <main>TBC</main>
-      <Footer />
-    </>
+    <Layout>
+      <>
+        <section>TBU</section>
+        <SearchBar />
+        <LatestInESG />
+        <Faqs />
+      </>
+    </Layout>
   );
 }
 
