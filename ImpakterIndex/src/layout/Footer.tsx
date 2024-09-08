@@ -25,7 +25,7 @@ export default function Footer() {
       </section>
 
       {/* Footer links */}
-      <section className="flex flex-grow gap-12">
+      <section className="w-full flex flex-grow gap-12 justify-between 2xl:max-w-[1440px]">
         <div className="min-w-[300px] max-w-[400px] flex flex-col gap-5">
           <img src={logo} alt="logo" />
           <div className="flex flex-col gap-3">

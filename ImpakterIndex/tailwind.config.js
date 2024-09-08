@@ -19,8 +19,11 @@ export default {
         button: '0.3rem',
       },
       fontSize: {
-        banner: '56px',
-        h1: '42px',
+        banner: '3.5rem',
+        h1: '2.6rem',
+        h2: '2rem',
+        small: '0.85rem',
+        main: '1rem',
       },
     },
   },

@@ -8,8 +8,9 @@ function App() {
   return (
     <Layout>
       <>
-        <section>TBU</section>
+        <section className="main-section">TBU</section>
         <SearchBar />
+        {/* TODO: change to component that contain this search bar*/}
         <LatestInESG />
         <Faqs />
       </>
