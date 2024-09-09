@@ -20,11 +20,15 @@
   }
 
   .main-section {
-    @apply p-[1.5rem_3rem] flex flex-col gap-5 justify-center items-center;
+    @apply p-[2rem_3rem] flex flex-col gap-5 justify-center items-center;
   }
 
   footer {
     @apply h-[var(--ft-height)] p-[0_3rem] flex flex-col justify-center items-center;
+  }
+
+  h2 {
+    @apply text-h2 font-[600];
   }
 }
 

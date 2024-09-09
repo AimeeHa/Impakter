@@ -1,3 +1,6 @@
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 export default function LatestInESG() {
   // TODO: find new images for articles
   const articles = [
@@ -28,7 +31,7 @@ export default function LatestInESG() {
 
   return (
     <section className="main-section">
-      <h2 className="text-h2 font-[600]">Latest in the world of ESG</h2>
+      <h2>Latest in the world of ESG</h2>
       <section className="w-full flex justify-evenly gap-10 items-start">
         {articles.map((article, i) => {
           return (
@@ -40,9 +43,18 @@ export default function LatestInESG() {
               />
               <div className="w-full h-[120px] p-3 bg-gray-200 flex flex-col justify-between items-start">
                 <h3 className="text-main font-[500]">{article.title}</h3>
-                <button className="text-small text-blue-500 underline-offset-2 underline">
-                  {article.action}
-                </button>
+                <a
+                  className="group flex justify-center items-center gap-1 text-blue-500
+                hover:text-blue-600 cursor-pointer"
+                >
+                  <span className="text-small">{article.action}</span>
+                  <span className="group-hover:translate-x-1 duration-200 ease-in-out">
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      style={{ width: '10px' }}
+                    />
+                  </span>
+                </a>
               </div>
             </article>
           );

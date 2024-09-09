@@ -7,7 +7,7 @@ export default function Faqs() {
 
   return (
     <section className="main-section bg-green-200">
-      <h2 className="text-h2 font-[600]">FAQs on ESG, Sustainability & CSRD</h2>
+      <h2>FAQs on ESG, Sustainability & CSRD</h2>
       <ul className="flex flex-col gap-5 w-full">
         {faqs.map((faq, i) => {
           return (

@@ -11,7 +11,7 @@ export default function TempPages() {
 
   return (
     <Layout>
-      <main className="flex justify-center items-center text-[1.5rem]">
+      <main className="flex justify-center items-center text-[1.5rem] h-[calc(70vh-var(--nav-height))]">
         This is temporary {formatedPageName} page.
       </main>
     </Layout>

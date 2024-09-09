@@ -71,6 +71,18 @@ const router = createBrowserRouter([
     path: '/top-companies/:id',
     element: <SingleCompanyPage />,
   },
+  {
+    path: '/company-by-country/:country',
+    element: <TempPages />,
+  },
+  {
+    path: '/company-by-industry/:industry',
+    element: <TempPages />,
+  },
+  {
+    path: '/company-by-rating/:rating/',
+    element: <TempPages />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
