@@ -8,7 +8,7 @@ export default function Navbar() {
       <a href="/">
         <img src={logo} alt="logo" />
       </a>
-      <ul className="flex gap-3 justify-center items-center">
+      <ul className="flex gap-5 justify-center items-center text-nav font-[500]">
         {navLinks.map((link, index) => (
           <li key={index}>
             <a href={link.link}>{link.title}</a>

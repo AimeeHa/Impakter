@@ -23,7 +23,14 @@ export default {
         h1: '2.6rem',
         h2: '2rem',
         small: '0.85rem',
+        nav: '0.9rem',
         main: '1rem',
+      },
+      keyframes: {
+        labelSlide: {
+          '0%': { top: '50%' },
+          '100%': { top: '0' },
+        },
       },
     },
   },
