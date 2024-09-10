@@ -15,6 +15,14 @@ export default {
       },
     },
     extend: {
+      colors: {
+        bgGreen: '#e6ede6',
+        bgHighlightGreen: '#bcf7bc',
+        orangeBrown: '#CF4C38',
+        darkerOrange: '#b04130',
+        lightOrange: '#E9A7A6',
+        purPink: '#CB477D',
+      },
       borderRadius: {
         button: '0.3rem',
       },

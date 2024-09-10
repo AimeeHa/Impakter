@@ -6,7 +6,7 @@ export default function Faqs() {
   console.log(isAnswerVisible);
 
   return (
-    <section className="main-section bg-green-200">
+    <section className="main-section">
       <h2>FAQs on ESG, Sustainability & CSRD</h2>
       <ul className="flex flex-col gap-5 w-full">
         {faqs.map((faq, i) => {

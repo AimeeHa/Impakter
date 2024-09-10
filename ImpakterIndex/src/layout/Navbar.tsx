@@ -27,7 +27,7 @@ export default function Navbar() {
             <a href={link.link}>{link.title}</a>
           </li>
         ))}
-        <FreeScoreButton className="blue-button" />
+        <FreeScoreButton className="main-button" />
         {/* language button */}
         <li
           className="cursor-pointer relative w-max p-2 border-[1px] border-gray-300 rounded-button"

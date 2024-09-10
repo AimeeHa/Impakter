@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <>
       {/* Book Demo group */}
-      <section className="h-[23rem] flex flex-col justify-center items-center gap-8 w-full">
+      <section className="h-[23rem] flex flex-col justify-center items-center gap-8 w-full bg-bgHighlightGreen">
         <h1 className="text-h1 text-center font-[600] text-balance">
           Looking for an ESG solution <br /> for your business?
         </h1>
@@ -58,7 +58,7 @@ export default function Footer() {
                 py-2 px-3"
                 />
                 <button
-                  className="blue-button"
+                  className="main-button"
                   onClick={(e) => e.preventDefault()}
                 >
                   Subscribe

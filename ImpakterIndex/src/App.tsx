@@ -37,7 +37,7 @@ function App() {
         </section>
 
         {/* List of countries, clickable for finding companies */}
-        <section className="main-section bg-green-200">
+        <section className="main-section bg-bgGreen">
           <h2>Find the ESG score of company by their country of origin</h2>
           <ul className="grid grid-cols-5 gap-x-10 gap-y-3">
             {countries.map((country, i) => (
@@ -49,7 +49,7 @@ function App() {
         </section>
 
         {/* List of industries, clicable for finding companies */}
-        <section className="main-section bg-white">
+        <section className="main-section">
           <h2>
             Compare how companies in one industry rank per their ESG score
           </h2>
@@ -80,7 +80,7 @@ function App() {
         </section>
 
         {/* List by scores */}
-        <section className="main-section bg-green-200">
+        <section className="main-section bg-bgGreen">
           <h2>Browse the companies by their ESG score</h2>
           <ul className="flex gap-5 justify-evenly items-center w-full">
             {ratings.map((rating, i) => (
@@ -102,7 +102,7 @@ function App() {
           </ul>
         </section>
 
-        <section className="main-section bg-white flex flex-col justify-center items-center gap-5">
+        <section className="main-section flex flex-col justify-center items-center gap-5">
           <h2>Why ESG Index is important?</h2>
           <p className="max-w-[70%] text-balance text-center">
             ESG indexes are crucial because they provide a standardized way to
@@ -110,7 +110,7 @@ function App() {
             thus help all stakeholders identify those ones with overall positive
             impact.
           </p>
-          <div className="flex w-[80%] justify-between items-center">
+          <div className="flex w-[80%] justify-between items-center mt-[1.5rem]">
             <article className="flex flex-col gap-3 justify-center items-start w-[28rem] ">
               <h3 className="font-[600] text-[1.3rem] self-center">
                 For Consumers
@@ -152,7 +152,7 @@ function App() {
           </div>
         </section>
 
-        <section className="main-section">
+        <section className="main-section bg-bgGreen">
           <h2>How is the ESG score calculated?</h2>
           <p className="max-w-[70%] text-center text-balance">
             ESG scores are typically calculated using a combination of

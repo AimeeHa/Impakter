@@ -7,6 +7,8 @@
     --nav-height: 4rem;
     --ft-height: 48rem;
     --main-height: calc(100vh - var(--nav-height));
+
+    background-color: white;
   }
 }
 
@@ -24,7 +26,7 @@
   }
 
   footer {
-    @apply h-[var(--ft-height)] p-[1rem_3rem] flex flex-col justify-center items-center;
+    @apply h-[var(--ft-height)] p-[2rem_3rem_1rem] flex flex-col justify-center items-center;
   }
 
   h2 {
@@ -37,15 +39,15 @@
     @apply w-[36px] h-[36px] opacity-85;
   }
 
-  .blue-button {
-    @apply w-[10rem] bg-blue-600 text-white rounded-button py-2 hover:bg-blue-800
+  .main-button {
+    @apply w-[10rem] bg-orangeBrown text-white rounded-button py-2 hover:bg-darkerOrange
     transition duration-200 ease-in-out delay-75 cursor-pointer border-solid border-[1px]
-    border-blue-600 hover:border-blue-800;
+    border-orangeBrown hover:border-darkerOrange hover:shadow-[0px_0px_6px_0px_#8f5147];
   }
 
   .white-button {
-    @apply w-[10rem] bg-white text-blue-600 rounded-button py-2 hover:bg-gray-100
+    @apply w-[10rem] bg-white text-orangeBrown rounded-button py-2 hover:bg-gray-100
       transition duration-200 ease-in-out delay-75 cursor-pointer border-solid border-[1px]
-      border-blue-600;
+      border-orangeBrown;
   }
 }
