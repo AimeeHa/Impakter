@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --nav-height: 4rem;
-    --ft-height: 70rem;
+    --ft-height: 48rem;
     --main-height: calc(100vh - var(--nav-height));
   }
 }
@@ -24,7 +24,7 @@
   }
 
   footer {
-    @apply h-[var(--ft-height)] p-[0_3rem] flex flex-col justify-center items-center;
+    @apply h-[var(--ft-height)] p-[1rem_3rem] flex flex-col justify-center items-center;
   }
 
   h2 {
