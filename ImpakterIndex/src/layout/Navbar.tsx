@@ -23,7 +23,15 @@ export default function Navbar() {
       </a>
       <ul className="flex gap-5 justify-center items-center text-nav font-[500]">
         {navLinks.map((link, index) => (
-          <li key={index}>
+          <li
+            key={index}
+            className="px-[4px] flex items-center justify-center hover:text-orangeBrown
+            hover:cursor-pointer relative transition ease-in-out duration-300
+            after:content-[''] after:absolute after:top-[1.25rem] after:left-2
+            after:w-[calc(100%-16px)] after:h-[2px] after:rounded-[0.5rem]
+            after:bg-transparent after:transition after:ease-in-out after:duration-300
+            hover:after:bg-orangeBrown"
+          >
             <a href={link.link}>{link.title}</a>
           </li>
         ))}
@@ -43,13 +51,14 @@ export default function Navbar() {
           </div>
           {showList && (
             <ul
-              className="absolute top-full left-0 h-max w-max flex flex-col gap-2 mt-3
-            bg-white px-2"
+              className="absolute top-full left-0 h-max w-max flex flex-col mt-3
+            bg-white"
             >
               {languages.map((lang, i) => (
                 <li
                   key={i}
-                  className="cursor-pointer hover:bg-gray-200 text-center"
+                  className="cursor-pointer hover:bg-gray-200 text-center p-2 border-b-[1px]
+                  border-[#F3F4F6]"
                   onClick={() => {
                     setLanguage(lang.short);
                     setShowList(false);

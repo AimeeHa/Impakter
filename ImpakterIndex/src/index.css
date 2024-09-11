@@ -18,15 +18,15 @@
   }
 
   main {
-    @apply min-h-max bg-gray-100;
+    @apply min-h-max;
   }
 
   .main-section {
-    @apply p-[2rem_3rem] flex flex-col gap-5 justify-center items-center;
+    @apply p-[3rem] flex flex-col gap-10 justify-center items-center;
   }
 
   footer {
-    @apply h-[var(--ft-height)] p-[2rem_3rem_1rem] flex flex-col justify-center items-center;
+    @apply h-[var(--ft-height)] p-[3rem_3rem_1rem] flex flex-col justify-center items-center;
   }
 
   h2 {
@@ -42,12 +42,18 @@
   .main-button {
     @apply w-[10rem] bg-orangeBrown text-white rounded-button py-2 hover:bg-darkerOrange
     transition duration-200 ease-in-out delay-75 cursor-pointer border-solid border-[1px]
-    border-orangeBrown hover:border-darkerOrange hover:shadow-[0px_0px_6px_0px_#8f5147];
+    border-orangeBrown hover:border-darkerOrange hover:shadow-[0px_0px_6px_0px_#b16e63];
   }
 
   .white-button {
-    @apply w-[10rem] bg-white text-orangeBrown rounded-button py-2 hover:bg-gray-100
+    @apply w-[10rem] bg-white text-orangeBrown rounded-button py-2 hover:bg-darkerOrange
       transition duration-200 ease-in-out delay-75 cursor-pointer border-solid border-[1px]
-      border-orangeBrown;
+      border-orangeBrown hover:text-white hover:shadow-[0px_0px_6px_0px_#b16e63];
+  }
+
+  .company-button {
+    @apply w-[10rem] bg-white text-searchGreen rounded-button py-2 hover:bg-[#3A4A2E]
+      transition duration-200 ease-in-out delay-75 cursor-pointer border-solid border-[1px]
+      border-searchGreen hover:text-white hover:shadow-[0px_0px_6px_0px_#5c6358];
   }
 }

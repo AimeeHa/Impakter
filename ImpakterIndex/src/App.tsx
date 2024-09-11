@@ -15,7 +15,7 @@ function App() {
     <Layout>
       <>
         <Banner
-          title="ESG Rating. Sustainability Report. ISO Certificates."
+          title={`ESG Rating\nSustainability Report\nISO Certificates`}
           subtitle="Explore and compare European companies across industries ranked by their sustainability initiatives."
         />
 
@@ -41,7 +41,7 @@ function App() {
           <h2>Find the ESG score of company by their country of origin</h2>
           <ul className="grid grid-cols-5 gap-x-10 gap-y-3">
             {countries.map((country, i) => (
-              <li key={i} className="text-center white-button">
+              <li key={i} className="text-center company-button">
                 <a href={`/company-by-country/${country}`}>{country}</a>
               </li>
             ))}

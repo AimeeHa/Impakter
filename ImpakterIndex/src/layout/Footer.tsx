@@ -2,8 +2,8 @@ import { footerLinks } from '../statics/links';
 import logo from '../assets/footerLogo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faFacebook,
   faLinkedin,
+  faSquareFacebook,
   faSquareInstagram,
   faSquareXTwitter,
 } from '@fortawesome/free-brands-svg-icons';
@@ -15,7 +15,7 @@ export default function Footer() {
     <>
       {/* Book Demo group */}
       <section className="h-[23rem] flex flex-col justify-center items-center gap-8 w-full bg-bgHighlightGreen">
-        <h1 className="text-h1 text-center font-[600] text-balance">
+        <h1 className="text-h1 text-center font-[600] text-balance text-white">
           Looking for an ESG solution <br /> for your business?
         </h1>
         <div className="w-[50%] flex justify-evenly items-center">
@@ -54,8 +54,8 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="border-solid border-[1px] border-gray-400 rounded-button
-                py-2 px-3"
+                  className="border-solid border-[1px] border-[#D1D5DB] rounded-button
+                py-2 px-3 focus:outline-none focus:border-orangeBrown"
                 />
                 <button
                   className="main-button"
@@ -70,9 +70,20 @@ export default function Footer() {
             {footerLinks.map((link, index) => (
               <li key={index} className="flex flex-col gap-3">
                 <h3 className="font-[600] min-h-[3rem]">{link.title}</h3>
-                <ul className="flex flex-col gap-3 max-w-[10rem]">
+                <ul
+                  className={`flex flex-col gap-3 ${
+                    link.title === 'Regulations'
+                      ? 'max-w-[8rem]'
+                      : 'max-w-[12.75rem]'
+                  }`}
+                >
                   {link.items.map((item, index) => (
-                    <li key={index}>
+                    <li
+                      key={index}
+                      className="px-[4px] hover:cursor-pointer transition ease-in-out duration-300
+                      hover:underline hover:underline-offset-4 hover:transition hover:ease-in-out
+                      hover:duration-300 delay-75"
+                    >
                       <a href={item.link}>{item.title}</a>
                     </li>
                   ))}
@@ -83,21 +94,30 @@ export default function Footer() {
         </section>
 
         {/* Social media */}
-        <section className="flex flex-col gap-4">
-          <div className="flex justify-center items-center gap-6">
-            <a href="https://www.linkedin.com">
+        <section className="flex flex-col gap-3">
+          <div className="flex justify-center items-center gap-6 text-gray-600">
+            <a
+              href="https://www.linkedin.com"
+              className="hover:scale-110 transition ease-in-out duration-300"
+            >
               <FontAwesomeIcon icon={faLinkedin} className="footerSNS" />
             </a>
-            <a href="https://www.facebook.com">
-              <FontAwesomeIcon
-                icon={faFacebook}
-                style={{ width: '34px', height: '35px', opacity: '0.85' }}
-              />
+            <a
+              href="https://www.facebook.com"
+              className="hover:scale-110 transition ease-in-out duration-300"
+            >
+              <FontAwesomeIcon icon={faSquareFacebook} className="footerSNS" />
             </a>
-            <a href="https://www.x.com">
+            <a
+              href="https://www.x.com"
+              className="hover:scale-110 transition ease-in-out duration-300"
+            >
               <FontAwesomeIcon icon={faSquareXTwitter} className="footerSNS" />
             </a>
-            <a href="https://www.instagram.com">
+            <a
+              href="https://www.instagram.com"
+              className="hover:scale-110 transition ease-in-out duration-300"
+            >
               <FontAwesomeIcon icon={faSquareInstagram} className="footerSNS" />
             </a>
           </div>
