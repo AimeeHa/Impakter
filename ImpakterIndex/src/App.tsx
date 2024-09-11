@@ -121,7 +121,7 @@ function App() {
               <img
                 src={consumers}
                 alt="ESG Index"
-                className="object-fit w-full h-[20rem]"
+                className="object-fit w-full h-[20rem] rounded-button"
               />
               <p className="font-[600] text-wrap">
                 Buy product & services from companies with strong sustainability
@@ -140,7 +140,7 @@ function App() {
               <img
                 src={busineses}
                 alt="ESG Index"
-                className="object-fit w-full h-[20rem]"
+                className="object-fit w-full h-[20rem] rounded-button"
               />
               <p className="font-[600] text-wrap">
                 Improve internal efficiency and branding to gain a competitive
