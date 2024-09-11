@@ -16,7 +16,7 @@ export default {
     },
     extend: {
       colors: {
-        bgGreen: '#e6ede6',
+        bgGreen: '#f2f5f2',
         bgHighlightGreen: '#235B38',
         orangeBrown: '#ed5740',
         darkerOrange: '#d9503b',

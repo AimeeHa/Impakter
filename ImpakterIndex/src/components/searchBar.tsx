@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import countries from '../statics/countries';
 import industries from '../statics/industries';
+import { footerLinks } from '../statics/links';
 
 export default function SearchBar({
   componentName,
@@ -19,6 +20,21 @@ export default function SearchBar({
   const [chosenCountry, setChosenCountry] = useState('');
   const [chosenIndustry, setChosenIndustry] = useState('');
   const [chosenRating, setChosenRating] = useState('');
+  const [matchingCompanies, setMatchingCompanies] = useState<string[]>([]);
+
+  const fetchMatchingCompanies = (value: string) => {
+    // currently taking all companies from footerLinks top sustainable object. Will need to fetch from database when available
+    const allCompanies =
+      footerLinks
+        .find((link) => link.title === 'Top Sustainable Companies')
+        ?.items.map((item) => item.title) || [];
+
+    // find companies that contain searched letters
+    let matchingCompanies = allCompanies.filter((company) =>
+      company.toLowerCase().includes(value.toLowerCase()),
+    );
+    setMatchingCompanies(matchingCompanies);
+  };
 
   return (
     <>
@@ -31,13 +47,8 @@ export default function SearchBar({
         >
           <label
             htmlFor="company"
-            className={`absolute z-10 left-[12px] translate-y-[-50%] duration-200
-              ${
-                isFocused
-                  ? // ? '-top-0.5 text-[0.7rem] animate-labelSlide bg-[linear-gradient(180deg,_transparent_50%,_white_50%)] p-1'
-                    'hidden'
-                  : 'top-[50%] animate-reverse-labelSlide'
-              }`}
+            className={`absolute z-10 left-[12px] duration-200
+              ${isFocused ? 'hidden' : 'top-1/2 -translate-y-1/2'}`}
           >
             Company Name
           </label>
@@ -49,8 +60,45 @@ export default function SearchBar({
               e.preventDefault();
               setIsFocused(true);
             }}
-            onChange={(e) => setCompanyName(e.target.value)}
+            onChange={(e) => {
+              setCompanyName(e.target.value);
+              fetchMatchingCompanies(e.target.value);
+            }}
+            value={companyName}
           />
+          {/* show a list of matching company names as user typing in search input */}
+          {matchingCompanies.length !== 0 ? (
+            <ul
+              className={`appearance-none cursor-pointer border-[2px] border-l-[1px] border-r-0
+            absolute top-full right-0 h-[15rem] overflow-scroll w-full bg-white
+              ${
+                componentName === 'banner'
+                  ? 'border-white border-l-searchGreen'
+                  : 'border-orangeBrown'
+              }`}
+            >
+              {matchingCompanies.map((company, i) => {
+                return (
+                  <li
+                    key={i}
+                    className={`cursor-pointe p-[1rem] border-t-[1px]
+                  ${
+                    componentName === 'banner'
+                      ? 'border-searchGreen hover:bg-[#486745] hover:text-white'
+                      : 'border-orangeBrown hover:bg-lightOrange'
+                  } transition duration-200 ease-in-out delay-75`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setCompanyName(company);
+                      setMatchingCompanies([]);
+                    }}
+                  >
+                    {company}
+                  </li>
+                );
+              })}
+            </ul>
+          ) : null}
         </div>
 
         <CustomSelect
@@ -136,17 +184,6 @@ export function CustomSelect({
         p-[1rem] bg-white ${showList ? 'border-b-[transparent]' : ''}`}
       onClick={() => setShowList(!showList)}
     >
-      {/* <label
-        htmlFor={id}
-        className={
-          showList || chosenValue !== ''
-            ? 'absolute z-10 left-[10px] translate-y-[-50%] duration-200 -top-0.5 text-[0.7rem] animate-labelSlide bg-[linear-gradient(180deg,_transparent_50%,_white_50%)] p-1'
-            : 'absolute top-[50%] animate-reverse-labelSlide duration-200 -z-20 right-[50%] text-transparent'
-        }
-      >
-        {placeholder}
-      </label> */}
-
       <select
         value={chosenValue}
         className="appearance-none bg-inherit focus:outline-none"

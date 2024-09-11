@@ -6,14 +6,14 @@ export default function Faqs() {
   console.log(isAnswerVisible);
 
   return (
-    <section className="main-section">
+    <section className="main-section bg-bgGreen">
       <h2>FAQs on ESG, Sustainability & CSRD</h2>
-      <ul className="flex flex-col gap-5 w-full">
+      <ul className="flex flex-col gap-3 w-full">
         {faqs.map((faq, i) => {
           return (
             <li
               key={i}
-              className="border-solid border-[1px] border-gray-400 p-[0.5rem]
+              className="border-solid border-[1px] border-[#D1D5DB] p-[0.5rem]
               rounded-button flex flex-col gap-2 cursor-pointer"
               onClick={(e) => {
                 e.preventDefault();
