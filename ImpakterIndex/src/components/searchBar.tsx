@@ -15,6 +15,7 @@ export default function SearchBar({
     'D - Poor',
     'F - Fail',
   ];
+  const industryNames: string[] = industries.map((industry) => industry.name);
   const [isFocused, setIsFocused] = useState(false);
   const [companyName, setCompanyName] = useState('');
   const [chosenCountry, setChosenCountry] = useState('');
@@ -113,7 +114,7 @@ export default function SearchBar({
         <CustomSelect
           id="industry"
           placeholder="Industries"
-          itemList={industries}
+          itemList={industryNames}
           chosenValue={chosenIndustry}
           setChosenValue={setChosenIndustry}
           componentName={componentName}

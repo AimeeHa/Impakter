@@ -14,7 +14,7 @@ export default function Navbar() {
     { short: 'VN', long: 'Vietnamese' },
   ];
   const [language, setLanguage] = useState('EN');
-  const [showList, setShowList] = useState(false);
+  const [showLangList, setShowLangList] = useState(false);
 
   return (
     <nav>
@@ -38,8 +38,8 @@ export default function Navbar() {
         <FreeScoreButton className="main-button" />
         {/* language button */}
         <li
-          className="cursor-pointer relative w-max p-2 border-[1px] border-gray-300 rounded-button"
-          onClick={() => setShowList(!showList)}
+          className="cursor-pointer relative w-max p-2 border-[1px] border-gray-300 rounded-button z-10"
+          onClick={() => setShowLangList(!showLangList)}
         >
           <div className="appearance-none focus:outline-none flex gap-1 justify-center items-center">
             <FontAwesomeIcon icon={faEarthAsia} />
@@ -49,7 +49,7 @@ export default function Navbar() {
               style={{ width: '0.8rem', paddingLeft: '2px' }}
             />
           </div>
-          {showList && (
+          {showLangList && (
             <ul
               className="absolute top-full left-0 h-max w-max flex flex-col mt-3
             bg-white"
@@ -61,7 +61,7 @@ export default function Navbar() {
                   border-[#F3F4F6]"
                   onClick={() => {
                     setLanguage(lang.short);
-                    setShowList(false);
+                    setShowLangList(false);
                   }}
                 >
                   {lang.long}

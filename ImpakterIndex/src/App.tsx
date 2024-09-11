@@ -9,6 +9,8 @@ import Banner from './components/Banner';
 import countries from './statics/countries';
 import industries from './statics/industries';
 import { ratings } from './statics/ratings';
+import busineses from './assets/businesses.png';
+import consumers from './assets/consumers.png';
 
 function App() {
   return (
@@ -41,7 +43,7 @@ function App() {
           <h2>Find the ESG score of company by their country of origin</h2>
           <ul className="grid grid-cols-5 gap-x-10 gap-y-3">
             {countries.map((country, i) => (
-              <li key={i} className="text-center company-button">
+              <li key={i} className="text-center company-button w-[10rem]">
                 <a href={`/company-by-country/${country}`}>{country}</a>
               </li>
             ))}
@@ -53,25 +55,24 @@ function App() {
           <h2>
             Compare how companies in one industry rank per their ESG score
           </h2>
-          <ul className="grid grid-cols-5 gap-x-10 gap-y-3">
+          <ul className="grid grid-cols-5 gap-x-10 gap-y-12">
             {industries.map((industry, i) => (
               <li key={i}>
                 <a
                   href={`/company-by-industry/${industry}`}
-                  className="flex flex-col gap-2 justify-center items-center relative
-                  w-[12rem] h-[15rem]"
+                  className="flex flex-col justify-center items-center relative
+                  w-[12rem] h-[12rem]"
                 >
                   <img
-                    src="https://cdn-icons-png.flaticon.com/512/4514/4514899.png"
-                    alt={industry}
+                    src={industry.img}
+                    alt={industry.name}
                     className="object-cover w-full h-full rounded-t-button"
                   />
                   <span
-                    className="absolute bottom-0 h-[3.25rem] flex justify-center items-center
-                    text-center bg-[rgba(70,87,74,0.8)] text-white w-full rounded-b-button
-                    text-small px-1"
+                    className="absolute bottom-0 h-[3.25rem] flex justify-center items-center p-2
+                    text-center text-balance w-full company-button"
                   >
-                    {industry}
+                    {industry.name}
                   </span>
                 </a>
               </li>
@@ -87,12 +88,14 @@ function App() {
               <li key={i}>
                 <a
                   href={`/company-by-rating/${rating.rating}`}
-                  className="flex flex-col gap-3 justify-center items-center"
+                  className="flex flex-col gap-2 justify-center items-center"
                 >
                   <img
-                    src="https://png.pngtree.com/png-clipart/20220220/ourlarge/pngtree-alphabet-learning-letter-a-for-kids-png-image_227369.png"
+                    src={rating.img}
                     alt={rating.rating}
-                    className="object-cover w-[12rem] h-[12rem] rounded-[50%]"
+                    className="object-cover w-[12rem] h-[12rem] bg-white rounded-[50%] mb-6
+                    border-[1px] border-solid"
+                    style={{ borderColor: rating.color }}
                   />
                   <span>{rating.meaning}</span>
                   <span>{rating.description}</span>
@@ -110,15 +113,15 @@ function App() {
             thus help all stakeholders identify those ones with overall positive
             impact.
           </p>
-          <div className="flex w-[80%] justify-between items-center mt-[1.5rem]">
-            <article className="flex flex-col gap-3 justify-center items-start w-[28rem] ">
+          <div className="flex w-[80%] justify-between items-start mt-[1.5rem]">
+            <article className="flex flex-col gap-3 justify-center items-start w-[33rem] ">
               <h3 className="font-[600] text-[1.3rem] self-center">
                 For Consumers
               </h3>
               <img
-                src="https://cdn-icons-png.flaticon.com/512/4514/4514899.png"
+                src={consumers}
                 alt="ESG Index"
-                className="object-fit w-full h-[17rem]"
+                className="object-fit w-full h-[20rem]"
               />
               <p className="font-[600] text-wrap">
                 Buy product & services from companies with strong sustainability
@@ -130,14 +133,14 @@ function App() {
                 <li>Advocating for corporate accountability</li>
               </ul>
             </article>
-            <article className="flex flex-col gap-3 justify-center items-start w-[28rem]">
+            <article className="flex flex-col gap-3 justify-center items-start w-[33rem]">
               <h3 className="font-[600] text-[1.3rem] self-center">
                 For Businesses
               </h3>
               <img
-                src="https://cdn-icons-png.flaticon.com/512/4514/4514899.png"
+                src={busineses}
                 alt="ESG Index"
-                className="object-fit w-full h-[17rem]"
+                className="object-fit w-full h-[20rem]"
               />
               <p className="font-[600] text-wrap">
                 Improve internal efficiency and branding to gain a competitive
@@ -154,24 +157,29 @@ function App() {
 
         <section className="main-section bg-bgGreen">
           <h2>How is the ESG score calculated?</h2>
-          <p className="max-w-[70%] text-center text-balance">
-            ESG scores are typically calculated using a combination of
-            quantitative and qualitative data. Quantitative data might include
-            factors like greenhouse gas emissions, water usage, employee
-            turnover, and board diversity. Qualitative data can be derived from
-            company disclosures, news articles, and industry reports. It's worth
-            noting that there's no one fixed way to calculate ESG score, but
-            only right methodologies.
-          </p>
-          <a
-            className="group flex justify-center items-center gap-1 text-blue-500
+          <div className="max-w-[70%] flex flex-col gap-3">
+            <p className="w-full text-center text-balance">
+              ESG scores are typically calculated using a combination of
+              quantitative and qualitative data. Quantitative data might include
+              factors like greenhouse gas emissions, water usage, employee
+              turnover, and board diversity. Qualitative data can be derived
+              from company disclosures, news articles, and industry reports.
+              It's worth noting that there's no one fixed way to calculate ESG
+              score, but only right methodologies.
+            </p>
+            <a
+              className="group flex justify-center items-center gap-1 text-blue-500
           hover:text-blue-600 cursor-pointer"
-          >
-            <span className="text-small">IMPAKTER INDEX Methodology</span>
-            <span className="group-hover:translate-x-1 duration-200 ease-in-out">
-              <FontAwesomeIcon icon={faArrowRight} style={{ width: '10px' }} />
-            </span>
-          </a>
+            >
+              <span className="text-small">IMPAKTER INDEX Methodology</span>
+              <span className="group-hover:translate-x-1 duration-200 ease-in-out">
+                <FontAwesomeIcon
+                  icon={faArrowRight}
+                  style={{ width: '10px' }}
+                />
+              </span>
+            </a>
+          </div>
           <SearchBar />
         </section>
 

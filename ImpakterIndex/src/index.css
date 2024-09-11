@@ -22,7 +22,7 @@
   }
 
   .main-section {
-    @apply p-[3rem] flex flex-col gap-10 justify-center items-center;
+    @apply p-[4rem_3rem] flex flex-col gap-14 justify-center items-center;
   }
 
   footer {
@@ -52,7 +52,7 @@
   }
 
   .company-button {
-    @apply w-[10rem] bg-white text-searchGreen rounded-button py-2 hover:bg-[#3A4A2E]
+    @apply bg-white text-searchGreen rounded-button py-2 hover:bg-[#3A4A2E]
       transition duration-200 ease-in-out delay-75 cursor-pointer border-solid border-[1px]
       border-searchGreen hover:text-white hover:shadow-[0px_0px_6px_0px_#5c6358];
   }
